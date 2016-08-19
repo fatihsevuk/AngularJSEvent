@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <h1 ng-mousemove="sayici1=sayici1+1">bu yazının üzerine gelirsen alttaki sayıcı artar</h1>
+    <h1>{{sayici1}}</h1>
+    <br>
+    <button ng-click="sayici2=sayici2+1" >arttır</button>
+
+    <h1>{{sayici2}}</h1>
+    <br>
+
+    <button ng-click="arttir()" >arttır</button>
+
+    <h1>{{sayici3}}</h1>
+
+
+
+</div>
+
+<script>
+
+    var app=angular.module('myApp' , []);
+    app.controller('myCtrl' , function ($scope) {
+        $scope.sayici1=0;
+        $scope.sayici2=0;
+        $scope.sayici3=0;
+        $scope.arttir=function () {
+            $scope.sayici3++;
+        }
+    });
+
+</script>
+
+
+
+
+
+</body>
+</html>
